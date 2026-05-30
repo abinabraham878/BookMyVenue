@@ -32,8 +32,40 @@ Key Design Decisions
 MVP Scope
 
 - Auth
-- Venue creation
+- User
+- Venue
 - Search
-- Availability
+- Reservation
 - Booking
 - Payment
+
+Non-Goals
+
+- Microservices
+- Kafka
+- Redis
+- Kubernetes
+- Dynamic Pricing
+- Recommendation Engine
+- Complex Analytics
+
+Booking Principles
+
+- Availability determined by reservation overlap.
+- Cooldown periods affect occupancy calculations.
+- Reservation created before payment.
+- Payment confirmation finalizes booking.
+- Historical bookings remain unchanged after policy updates.
+
+Testing
+
+- Unit tests mandatory for service layer.
+- Critical business logic must be tested.
+- Booking, availability, pricing and payment flows require tests.
+
+Database Migration
+
+Liquibase
+
+All schema changes are version controlled through Liquibase changelogs.
+Direct database modifications are prohibited.
