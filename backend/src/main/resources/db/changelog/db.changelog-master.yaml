@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include: 
+      file: db/changelog/001-create-users.xml
+  - include:
+      file: db/changelog/002-create-user-details.xml
+  - include:
+      file: db/changelog/003-create-user-roles.xml
+  - include:
+      file: db/changelog/004-create-email-verification-tokens.xml
+  - include:
+      file: db/changelog/005-create-password-reset-tokens.xml
