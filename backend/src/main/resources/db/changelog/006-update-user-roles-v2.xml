@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.liquibase.org/xml/ns/dbchangelog
+            https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="006-update-user-roles-v2" author="abin">
+
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="user_roles" />
+        </preConditions>
+
+        <addColumn tableName="user_roles">
+            <column name="created_at" type="TIMESTAMPTZ" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false" />
+            </column>
+        </addColumn>
+
+        <addColumn tableName="user_roles">
+            <column name="created_by" type="UUID" />
+        </addColumn>
+
+        <addColumn tableName="user_roles">
+            <column name="updated_at" type="TIMESTAMPTZ" />
+        </addColumn>
+
+        <addColumn tableName="user_roles">
+            <column name="updated_by" type="UUID" />
+        </addColumn>
+
+        <addColumn tableName="user_roles">
+            <column name="deleted_at" type="TIMESTAMPTZ" />
+        </addColumn>
+
+        <addColumn tableName="user_roles">
+            <column name="deleted_by" type="UUID" />
+        </addColumn>
+
+        <rollback>
+            <dropColumn tableName="user_roles" columnName="created_at" />
+            <dropColumn tableName="user_roles" columnName="created_by" />
+            <dropColumn tableName="user_roles" columnName="updated_at" />
+            <dropColumn tableName="user_roles" columnName="updated_by" />
+            <dropColumn tableName="user_roles" columnName="deleted_at" />
+            <dropColumn tableName="user_roles" columnName="deleted_by" />
+        </rollback>
+
+    </changeSet>
+
+</databaseChangeLog>

@@ -9,3 +9,5 @@ databaseChangeLog:
       file: db/changelog/004-create-email-verification-tokens.xml
   - include:
       file: db/changelog/005-create-password-reset-tokens.xml
+  - include:
+      file: db/changelog/006-update-user-roles-v2.xml

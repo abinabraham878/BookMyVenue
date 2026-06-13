@@ -14,6 +14,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @Table(name = "user_roles")
+@IdClass(UserRoleId.class)
 public class UserRoleEntity extends BaseEntity {
 
     @Id
