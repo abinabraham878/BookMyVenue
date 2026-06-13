@@ -34,7 +34,7 @@ public class AuthController {
     }
 
     @PostMapping("/resend-verification")
-    public SuccessResponse resendVerificationToken(@RequestParam String email) {
-        return emailVerificationService.resendVerificationEmail(email);
+    public void resendVerificationToken(@RequestParam String email) {
+        emailVerificationService.resendVerificationEmail(email);
     }
 }
