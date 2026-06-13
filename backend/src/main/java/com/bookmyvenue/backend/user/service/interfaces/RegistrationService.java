@@ -44,7 +44,7 @@ public class RegistrationService implements RegistrationServiceInterface {
                 throw new BusinessException(ErrorCode.AUTH_EMAIL_ALREADY_EXISTS);
             }
             if (user.getStatus() == UserStatus.PENDING_VERIFICATION) {
-                emailVerificationServiceImplementation.resendVerificationEmail(user);
+                emailVerificationServiceImplementation.resendVerificationEmail(user.getEmail());
                 return new SuccessResponse(
                         ErrorCode.AUTH_EMAIL_VERIFICATION_RESENT.name(),
                         ErrorCode.AUTH_EMAIL_VERIFICATION_RESENT.getMessage(),

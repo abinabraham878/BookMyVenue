@@ -20,3 +20,8 @@ spring:
 logging:
   level:
     liquibase: INFO
+
+auth:
+  ui-base-url: ${UI_BASE_URL}
+  email-verification:
+    expiry-minutes: ${EMAIL_VERIFICATION_EXPIRY:5}

@@ -28,7 +28,28 @@ public enum ErrorCode {
     AUTH_REGISTRATION_SUCCESS(
             HttpStatus.CREATED,
             "Account has been successfully registered. Please verify your email."
-    );
+    ),
+    AUTH_INVALID_VERIFICATION_TOKEN(
+            HttpStatus.BAD_REQUEST,
+            "Invalid verification link"
+    ),
+    AUTH_VERIFICATION_TOKEN_EXPIRED(
+            HttpStatus.BAD_REQUEST,
+            "Verification link has expired"
+    ),
+    AUTH_EMAIL_ALREADY_VERIFIED(
+            HttpStatus.OK,
+            "Email already verified"
+    ),
+    AUTH_EMAIL_VERIFIED_SUCCESS(
+            HttpStatus.OK,
+            "Email verification successful"
+    ),
+    USER_EMAIL_NOT_FOUND(
+            HttpStatus.NOT_FOUND,
+            "User not found"
+    )
+    ;
 
     private final HttpStatus httpStatus;
     private final String message;
