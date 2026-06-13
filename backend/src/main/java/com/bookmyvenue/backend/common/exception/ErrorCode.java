@@ -20,6 +20,14 @@ public enum ErrorCode {
     AUTH_INVALID_PASSWORD(
             HttpStatus.BAD_REQUEST,
             "Password does not meet security requirements"
+    ),
+    AUTH_EMAIL_VERIFICATION_RESENT(
+            HttpStatus.OK,
+            "Account already exists but is not verified. Verification email has been resent."
+    ),
+    AUTH_REGISTRATION_SUCCESS(
+            HttpStatus.CREATED,
+            "Account has been successfully registered. Please verify your email."
     );
 
     private final HttpStatus httpStatus;
